@@ -1,0 +1,275 @@
+:root {
+    /* Primary */
+
+    --Linear-gradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+    /* active input border */
+    --Red: hsl(0, 100%, 66%);
+    /* input errors */
+
+    /* Neutral */
+
+    --White: hsl(0, 0%, 100%);
+    --Light-grayish-violet: hsl(270, 3%, 87%);
+    --Dark-grayish-violet: hsl(279, 6%, 55%);
+    --Very-dark-violet: hsl(278, 68%, 11%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background-color: gray;
+    height: 100vh;
+    width: 100vw;
+    font-size: 18px;
+}
+
+body {
+    background-color: white;
+    max-width: 375px;
+    margin: 0 auto;
+    padding: 1px 10px;
+    /* font */
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    color: var(--Transparent-white);
+    border-radius: 5px;
+    /* bg image */
+    background-image: url("images/bg-main-mobile.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+p {
+    margin: 15px 0 5px;
+}
+
+.image-stack {
+    padding: 0 10px;
+    display: grid;
+    position: relative;
+    /* imperative for the overlapping to work */
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.image-stack_bottom {
+    grid-column: 3 / -1;
+    grid-row: 1;
+}
+
+.image-stack_top {
+    grid-row: 1;
+    grid-column: 1 / span 10;
+    padding-top: 31%;
+    /* slightly arbitrary, keeps proportion once resized */
+    z-index: 1;
+    /* tells the browser to make this image on top */
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+#logo {
+    grid-row: 1;
+    grid-column: 2 / -1;
+    z-index: 1;
+    height: 30.4px;
+    width: 54.4px;
+    margin-top: 35%;
+}
+
+#cardNum {
+    grid-row: 1;
+    grid-column: 2 / -1;
+    color: white;
+    z-index: 1;
+    margin-top: 55%;
+    letter-spacing: 1px;
+}
+
+#name_monthYear {
+    grid-row: 1;
+    grid-column: 2 / 10;
+    color: white;
+    z-index: 1;
+    margin-top: 92%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+}
+
+#cvc {
+    grid-row: 1;
+    grid-column: 11 / -1;
+    color: white;
+    z-index: 1;
+
+    margin-top: 125%;
+    font-size: 10px;
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#month-year-cvc_wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+input {
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#name_In,
+#cardNum_In {
+    width: 100%;
+}
+
+#month_In,
+#year_In {
+    width: 47%;
+}
+
+#cvc_In {
+    width: 100%;
+}
+
+#p3,
+#p4 {
+    width: 50%;
+}
+
+button.submit {
+    width: 100%;
+    margin: 30px 5px;
+    padding: 10px 0;
+    border-radius: 10px;
+    border: none;
+}
+
+.submit {}
+
+.complete {
+    display: none;
+}
+
+
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    color: black;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (max-width: 799px) {
+    * {
+        transition: .1s ease;
+    }
+
+}
+
+@media only screen and (min-width: 800px) {
+    * {
+        transition: .1s ease;
+    }
+
+    body {
+        min-width: 800px;
+        max-width: 1200px;
+        max-height: 900px;
+        margin: 0px auto;
+        /* bg image */
+        background-image: url("images/bg-main-desktop.png");
+        background-repeat: no-repeat;
+        background-position: top left;
+
+    }
+
+    #desktop-wrapper {
+        display: flex;
+        flex-direction: row;
+        padding: 50px;
+        margin: 50px;
+    }
+
+    .image-stack {
+        width: 550px;
+    }
+
+    #desktop-item-1 {
+        margin-right: 40px;
+    }
+
+    #desktop-item-2 {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 10% 0;
+        margin-left: 40px;
+    }
+
+    .image-stack_bottom {
+        grid-column: 3 / -1;
+        margin-top: 65%;
+    }
+
+    .image-stack_top {
+        grid-column: 1 / span 10;
+        padding-top: 0;
+        /* margin-top: -20%; */
+        z-index: 1;
+    }
+
+
+
+    /* #logo {
+        grid-row: 1;
+        grid-column: 2 / -1;
+        z-index: 1;
+        height: 30.4px;
+        width: 54.4px;
+        margin-top: 35%;
+    }
+
+    #cardNum {
+        grid-row: 1;
+        grid-column: 2 / -1;
+        color: white;
+        z-index: 1;
+        margin-top: 55%;
+        letter-spacing: 1px;
+    }
+
+    #name_monthYear {
+        grid-row: 1;
+        grid-column: 2 / 10;
+        color: white;
+        z-index: 1;
+        margin-top: 92%;
+        display: flex;
+        justify-content: space-between;
+        font-size: 10px;
+    }
+
+    #cvc {
+        grid-row: 1;
+        grid-column: 11 / -1;
+        color: white;
+        z-index: 1;
+
+        margin-top: 125%;
+        font-size: 10px;
+    } */
+
+}
