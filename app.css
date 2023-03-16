@@ -1,7 +1,7 @@
 :root {
     /* Primary */
 
-    --Linear-gradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+    --Linear-gradient: linear-gradient(120deg, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
     /* active input border */
     --Red: hsl(0, 100%, 66%);
     /* input errors */
@@ -11,6 +11,7 @@
     --White: hsl(0, 0%, 100%);
     --Light-grayish-violet: hsl(270, 3%, 87%);
     --Dark-grayish-violet: hsl(279, 6%, 55%);
+    --Kinda-dark-violet: hsl(278, 62%, 39%);
     --Very-dark-violet: hsl(278, 68%, 11%);
 }
 
@@ -23,6 +24,7 @@ html {
     height: 100vh;
     width: 100vw;
     font-size: 18px;
+    letter-spacing: 1px;
 }
 
 body {
@@ -87,7 +89,6 @@ img {
     color: white;
     z-index: 1;
     margin-top: 55%;
-    letter-spacing: 1px;
 }
 
 #name_monthYear {
@@ -115,6 +116,8 @@ img {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    color: var(--Very-dark-violet);
+    font-size: 12px;
 }
 
 #month-year-cvc_wrapper {
@@ -125,6 +128,11 @@ img {
 input {
     padding: 10px;
     border-radius: 10px;
+    border: 1px solid var(--Light-grayish-violet)
+}
+
+input:focus {
+    border: 1px solid var(--Very-dark-violet);
 }
 
 #name_In,
@@ -141,22 +149,58 @@ input {
     width: 100%;
 }
 
-#p3,
-#p4 {
+#monthYear_wrapper,
+#cvc_wrapper {
     width: 50%;
 }
 
-button.submit {
+button.submit,
+button.continue {
     width: 100%;
     margin: 30px 5px;
-    padding: 10px 0;
+    padding: 15px 0;
     border-radius: 10px;
     border: none;
+    color: white;
+    background-color: var(--Very-dark-violet);
+    font-size: 16px;
+    transition: background-color 0.5s ease;
 }
 
-.submit {}
+button.submit:hover,
+button.continue:hover {
+    background-color: var(--Kinda-dark-violet);
+}
+
+img#checkmark {
+    height: 80px;
+    width: 80px;
+    display: block;
+    margin: 30px auto;
+}
 
 .complete {
+    text-align: center;
+}
+
+#thanks {
+    color: var(--Very-dark-violet);
+    font-size: 24px;
+}
+
+#subThanks {
+    color: var(--Dark-grayish-violet);
+}
+
+p.warning {
+    color: red;
+}
+
+input.warning {
+    border: solid 1px red;
+}
+
+.hidden {
     display: none;
 }
 
@@ -233,43 +277,25 @@ button.submit {
 
 
 
-    /* #logo {
-        grid-row: 1;
-        grid-column: 2 / -1;
-        z-index: 1;
-        height: 30.4px;
-        width: 54.4px;
-        margin-top: 35%;
+    #logo {
+        height: 47px;
+        width: 84px;
+        margin-top: 8%;
     }
 
     #cardNum {
-        grid-row: 1;
-        grid-column: 2 / -1;
-        color: white;
-        z-index: 1;
-        margin-top: 55%;
-        letter-spacing: 1px;
+        margin-top: 30%;
+        font-size: 28px;
     }
 
     #name_monthYear {
-        grid-row: 1;
-        grid-column: 2 / 10;
-        color: white;
-        z-index: 1;
-        margin-top: 92%;
-        display: flex;
-        justify-content: space-between;
-        font-size: 10px;
+        margin-top: 57%;
+        font-size: 16px;
     }
 
     #cvc {
-        grid-row: 1;
-        grid-column: 11 / -1;
-        color: white;
-        z-index: 1;
-
-        margin-top: 125%;
-        font-size: 10px;
-    } */
+        margin-top: 447%;
+        font-size: 18px;
+    }
 
 }

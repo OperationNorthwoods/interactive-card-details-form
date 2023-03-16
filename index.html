@@ -40,41 +40,51 @@
     <br>
     <div id="desktop-item-2">
       <div class="form-wrapper">
-        <div>
-          <p>Cardholder Name</p>
-          <input name="name" id="name_In" type="text" placeholder="e.g. Jane Appleseed" />
+        <div id="name_wrapper">
+          <p>CARDHOLDER NAME</p>
+          <input name="name" id="name_In" type="text" maxlength="60" placeholder="e.g. Jane Appleseed" />
+          <p class="hidden warning warning_letters">Wrong format, letters only</p>
+          <p class="hidden warning warning_blank">Can't be blank</p>
         </div>
 
-        <div>
-          <p>Card Number</p>
-          <input name="cardNum" id="cardNum_In" type="text" placeholder="e.g. 1234 5678 9123 0000" />
+        <div id="cardNum_cont">
+          <p>CARD NUMBER</p>
+          <input name="cardNum" id="cardNum_In" type="text" maxlength="16" placeholder="e.g. 1234 5678 9123 0000" />
+          <p class="hidden warning warning_num">Wrong format, numbers only</p>
+          <p class="hidden warning warning_blank">Can't be blank</p>
         </div>
 
 
         <div id="month-year-cvc_wrapper">
-          <div id="p3">
-            <p>Exp. Date (MM/YY)</p>
-            <input name="month" id="month_In" type="text" placeholder="MM" />
-            <input name="year" id="year_In" type="text" placeholder="YY" />
+          <div id="monthYear_wrapper">
+            <p>EXP. DATE (MM/YY)</p>
+            <input name="month" id="month_In" type="text" maxlength="2" placeholder="MM" />
+            <input name="year" id="year_In" type="text" maxlength="2" placeholder="YY" />
+            <p class="hidden warning warning_num">Wrong format, numbers only</p>
+            <p class="hidden warning warning_blank">Can't be blank</p>
           </div>
 
-          <div id="p4">
+          <div id="cvc_wrapper">
             <p>CVC</p>
-            <input name="cvc" id="cvc_In" type="text" placeholder="e.g. 123" />
+            <input name="cvc" id="cvc_In" type="text" maxlength="3" placeholder="e.g. 123" />
+            <p class="hidden warning warning_num">Wrong format, numbers only</p>
+            <p class="hidden warning warning_blank">Can't be blank</p>
           </div>
         </div>
       </div>
 
       <button class="submit">Confirm</button>
+
+      <div class="complete hidden">
+        <img id="checkmark" src="images/icon-complete.svg" alt="complete">
+        <p id="thanks">THANK YOU!</p>
+        <p id="subThanks">We've added your card details</p>
+        <button class="continue">Continue</button>
+      </div class="complete">
+
     </div>
   </div>
   <!-- Completed state start -->
-
-  <div class="complete">
-    <p>Thank you!</p>
-    <p>We've added your card details</p>
-    <button>Continue</button>
-  </div class="complete">
 
   <br>
 
@@ -83,5 +93,6 @@
     Coded by <a href="https://github.com/OperationNorthwoods">OperationNorthwoods</a>.
   </div>
 </body>
+<script src="app.js"></script>
 
 </html>
